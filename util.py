@@ -1,3 +1,5 @@
+import random
+
 suits = ['♠', '♥', '♦', '♣']  # Using Unicode symbols
 values = ['2', '3', '4', '5', '6', '7', '8', '9', '10', 'J', 'Q', 'K', 'A']
 number_of_decks = 6
@@ -9,6 +11,7 @@ valid_user_option = ('y', 'n')
 def build_deck(seeds: [str], card_values: [str], num_decks: int) -> [str]:
     single_deck = [(card_value, seed) for seed in seeds for card_value in card_values]
     game_deck = single_deck * num_decks
+    random.shuffle(game_deck)
     return game_deck
 
 
