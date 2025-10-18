@@ -72,6 +72,10 @@ def winner_check(player_point: int, opponent_points: int, player_cards: [str], o
     elif opponent_points > 21 >= player_point:
         return (f"WINNER WINNER CHICKEN DINNER..! Dealer busted!\nYour cards: {player_cards} with a total score of {player_point}\n"
                 f"Dealer cards: {opponent_cards} with a total score of {opponent_points}")
+    elif opponent_points < 21 and opponent_points == player_point:
+        return (
+            f"Both you and the Dealer hold the same points..! This hand end with a TIE\nYour cards: {player_cards} "
+            f"with a total score of {player_point}\nDealer cards: {opponent_cards} with a total score of {opponent_points}")
     else:
         # 👇 final catch-all fallback (should rarely trigger)
         return (f"Round ended with no clear winner (possible logic gap)\n"
